@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    143988,       3975]
-NotebookOptionsPosition[    135278,       3753]
-NotebookOutlinePosition[    135742,       3771]
-CellTagsIndexPosition[    135699,       3768]
+NotebookDataLength[    142079,       3919]
+NotebookOptionsPosition[    133482,       3700]
+NotebookOutlinePosition[    133946,       3718]
+CellTagsIndexPosition[    133903,       3715]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -128,7 +128,7 @@ Cell[BoxData[
     RowBox[{"#", "&"}], ")"}]}], "*)"}]], "Input"],
 
 Cell[BoxData[
- RowBox[{"NT", "=", "9", 
+ RowBox[{"NT", "=", "11", 
   RowBox[{"(*", " ", 
    RowBox[{"angular", " ", "rays", " ", 
     RowBox[{"(", 
@@ -137,7 +137,7 @@ Cell[BoxData[
       RowBox[{"19", " ", "tested"}]}], ")"}]}], " ", "*)"}]}]], "Input"],
 
 Cell[BoxData[
- RowBox[{"NR", "=", "17", " ", 
+ RowBox[{"NR", "=", "11", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"radial", " ", "slices"}], ",", " ", 
@@ -150,7 +150,7 @@ Cell[BoxData[
    "*)"}]}]], "Input"],
 
 Cell[BoxData[
- RowBox[{"NL", "=", "16", " ", 
+ RowBox[{"NL", "=", "8", " ", 
   RowBox[{"(*", " ", 
    RowBox[{"number", " ", "of", " ", "Legendre", " ", "polynomials", " ", 
     RowBox[{
@@ -185,7 +185,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"abc", "=", 
+  RowBox[{"abcNUM", "=", 
    RowBox[{
     RowBox[{
      RowBox[{
@@ -199,7 +199,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"abc2", "=", 
+  RowBox[{"abc", "=", 
    RowBox[{"Sort", "[", 
     RowBox[{
      RowBox[{
@@ -221,11 +221,11 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"abc", "-", "abc2"}], "//", "Total"}]], "Input"],
+  RowBox[{"abc", "-", "abcNUM"}], "//", "Total"}]], "Input"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"weights", "=", 
+  RowBox[{"weightsNUM", "=", 
    RowBox[{
     RowBox[{
      RowBox[{
@@ -239,7 +239,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"weights2", "=", 
+  RowBox[{"weights", "=", 
    RowBox[{"Table", "[", 
     RowBox[{
      RowBox[{
@@ -274,7 +274,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"weights", "-", "weights2"}], "//", "Total"}]], "Input"],
+  RowBox[{"weights", "-", "weightsNUM"}], "//", "Total"}]], "Input"],
 
 Cell[BoxData[
  RowBox[{
@@ -401,46 +401,17 @@ Cell[BoxData[
    3.671546215855192*^9, 3.67154621624583*^9}, 3.671546565778247*^9}],
 
 Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"\[Theta]", "=", 
-   RowBox[{
-    RowBox[{"Pi", "/", "2"}], " ", 
-    RowBox[{
-     RowBox[{"NIntegrate`GaussRuleData", "[", 
-      RowBox[{"NT", ",", "64"}], "]"}], "[", 
-     RowBox[{"[", "1", "]"}], "]"}]}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.671544995245976*^9, 3.671545040485713*^9}, {
-   3.671545302364994*^9, 3.67154530355558*^9}, 3.67154656207314*^9}],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"\[Theta]", "=", 
-   RowBox[{
-    RowBox[{"Pi", "/", "2"}], " ", 
-    RowBox[{
-     RowBox[{"NIntegrate`NewtonCotesRuleData", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"NT", "+", "1"}], ")"}], "/", "2"}], ",", "64"}], "]"}], "[", 
-     RowBox[{"[", "1", "]"}], "]"}]}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.671545792944713*^9, 3.671545834568098*^9}, {
-   3.6715458954724092`*^9, 3.671545909439946*^9}, 3.671546558521472*^9}],
-
-Cell[BoxData[
  RowBox[{
   RowBox[{"\[Theta]", "=", 
    RowBox[{
-    RowBox[{
-     RowBox[{"Pi", "/", "2"}], " ", 
+    RowBox[{"Pi", "/", "2"}], " ", 
+    RowBox[{"(", 
      RowBox[{
-      RowBox[{"NIntegrate`LobattoKronrodRuleData", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"(", 
-          RowBox[{"NT", "+", "1"}], ")"}], "/", "2"}], ",", "64"}], "]"}], 
-      "[", 
-      RowBox[{"[", "1", "]"}], "]"}]}], "//", "Chop"}]}], ";"}]], "Input"],
+      RowBox[{
+       RowBox[{"NIntegrate`LobattoRuleData", "[", 
+        RowBox[{"NT", ",", "64"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "//", "Chop"}], ")"}]}]}], 
+  ";"}]], "Input"],
 
 Cell[BoxData[
  RowBox[{
@@ -485,42 +456,15 @@ Cell[BoxData[
    3.671546573660017*^9}}],
 
 Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"\[CapitalDelta]\[Theta]", "=", 
-   RowBox[{
-    RowBox[{"NIntegrate`GaussRuleData", "[", 
-     RowBox[{"NT", ",", "64"}], "]"}], "[", 
-    RowBox[{"[", "2", "]"}], "]"}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.671545071597595*^9, 3.671545075733445*^9}, 
-   3.6715459184485683`*^9}],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"\[CapitalDelta]\[Theta]", "=", 
-   RowBox[{
-    RowBox[{"NIntegrate`NewtonCotesRuleData", "[", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{"NT", "+", "1"}], ")"}], "/", "2"}], ",", "64"}], "]"}], "[", 
-    RowBox[{"[", "2", "]"}], "]"}]}], "*)"}]], "Input",
- CellChangeTimes->{{3.671545928135776*^9, 3.671545940095624*^9}, {
-  3.671546584779935*^9, 3.671546592894141*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"\[CapitalDelta]\[Theta]", "=", 
-   RowBox[{
-    RowBox[{"Pi", "/", "2"}], " ", 
+ RowBox[{"\[CapitalDelta]\[Theta]", "=", 
+  RowBox[{
+   RowBox[{"Pi", "/", "2"}], " ", 
+   RowBox[{"(", 
     RowBox[{
-     RowBox[{"NIntegrate`LobattoKronrodRuleData", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"NT", "+", "1"}], ")"}], "/", "2"}], ",", "64"}], "]"}], "[", 
-     RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}]], "Input",
- CellChangeTimes->{{3.671546597811349*^9, 3.671546600075138*^9}, 
-   3.671548785340474*^9}],
+     RowBox[{
+      RowBox[{"NIntegrate`LobattoRuleData", "[", 
+       RowBox[{"NT", ",", "64"}], "]"}], "\[LeftDoubleBracket]", "2", 
+      "\[RightDoubleBracket]"}], "//", "Chop"}], ")"}]}]}]], "Input"],
 
 Cell[BoxData[
  RowBox[{
@@ -3704,6 +3648,9 @@ Cell[BoxData[
   3.671621325466374*^9, 3.6716213397529583`*^9}}],
 
 Cell[BoxData[
+ RowBox[{"\[CapitalOmega]\[Alpha]Eri", " ", "Tsun"}]], "Input"],
+
+Cell[BoxData[
  RowBox[{"FindRoot", "[", 
   RowBox[{
    RowBox[{
@@ -3780,203 +3727,200 @@ Cell[3943, 106, 106, 1, 46, "Input"],
 Cell[4052, 109, 276, 6, 46, "Input"],
 Cell[4331, 117, 124, 4, 46, "Input"],
 Cell[4458, 123, 121, 4, 46, "Input"],
-Cell[4582, 129, 247, 7, 46, "Input"],
-Cell[4832, 138, 387, 11, 46, "Input"],
-Cell[5222, 151, 735, 17, 107, "Input"],
+Cell[4582, 129, 248, 7, 46, "Input"],
+Cell[4833, 138, 387, 11, 46, "Input"],
+Cell[5223, 151, 734, 17, 107, "Input"],
 Cell[5960, 170, 451, 13, 46, "Input"],
-Cell[6414, 185, 378, 12, 46, "Input"],
-Cell[6795, 199, 620, 20, 46, "Input"],
-Cell[7418, 221, 82, 2, 46, "Input"],
-Cell[7503, 225, 382, 12, 46, "Input"],
-Cell[7888, 239, 1019, 33, 46, "Input"],
-Cell[8910, 274, 90, 2, 46, "Input"],
-Cell[9003, 278, 411, 13, 46, "Input"],
-Cell[9417, 293, 614, 19, 46, "Input"],
-Cell[10034, 314, 430, 13, 46, "Input"],
-Cell[10467, 329, 583, 17, 46, "Input"],
-Cell[11053, 348, 896, 24, 77, "Input"],
-Cell[11952, 374, 1121, 26, 46, "Input"],
-Cell[13076, 402, 406, 10, 46, "Input"],
-Cell[13485, 414, 503, 13, 46, "Input"],
-Cell[13991, 429, 403, 13, 46, "Input"],
-Cell[14397, 444, 1651, 40, 46, "Input"],
-Cell[16051, 486, 325, 8, 46, "Input"],
-Cell[16379, 496, 436, 11, 46, "Input"],
-Cell[16818, 509, 466, 13, 46, "Input"],
-Cell[17287, 524, 745, 20, 107, "Input"],
-Cell[18035, 546, 504, 10, 46, "Input"],
-Cell[18542, 558, 651, 17, 46, "Input"],
-Cell[19196, 577, 736, 16, 46, "Input"],
-Cell[19935, 595, 279, 8, 46, "Input"],
-Cell[20217, 605, 610, 14, 81, "Input"],
-Cell[20830, 621, 1095, 28, 61, "Input"],
-Cell[21928, 651, 135, 2, 46, "Input"],
-Cell[22066, 655, 280, 7, 46, "Input"],
-Cell[22349, 664, 2789, 66, 377, "Input"],
-Cell[25141, 732, 81, 1, 46, "Input"],
-Cell[25225, 735, 64, 1, 46, "Input"],
-Cell[25292, 738, 106, 1, 46, "Input"],
-Cell[25401, 741, 140, 3, 46, "Input"],
-Cell[25544, 746, 1119, 28, 107, "Input"],
-Cell[26666, 776, 845, 24, 107, "Input"],
-Cell[27514, 802, 975, 28, 107, "Input"],
-Cell[28492, 832, 929, 27, 107, "Input"],
-Cell[29424, 861, 923, 27, 107, "Input"],
-Cell[30350, 890, 931, 27, 107, "Input"],
-Cell[31284, 919, 1894, 45, 137, "Input"],
-Cell[33181, 966, 1121, 30, 137, "Input"],
-Cell[34305, 998, 926, 26, 107, "Input"],
-Cell[35234, 1026, 958, 24, 107, "Input"],
-Cell[36195, 1052, 925, 22, 107, "Input"],
-Cell[37123, 1076, 659, 16, 77, "Input"],
-Cell[37785, 1094, 151, 4, 46, "Input"],
-Cell[37939, 1100, 355, 11, 46, "Input"],
-Cell[38297, 1113, 176, 3, 46, "Input"],
-Cell[38476, 1118, 1496, 41, 107, "Input"],
-Cell[39975, 1161, 7597, 171, 797, "Input"],
-Cell[47575, 1334, 294, 6, 46, "Input"],
-Cell[47872, 1342, 1819, 48, 77, "Input"],
-Cell[49694, 1392, 194, 6, 46, "Input"],
-Cell[49891, 1400, 761, 22, 46, "Input"],
-Cell[50655, 1424, 163, 5, 46, "Input"],
-Cell[50821, 1431, 227, 6, 46, "Input"],
-Cell[51051, 1439, 1327, 28, 46, "Input"],
-Cell[52381, 1469, 990, 28, 197, "Input"],
-Cell[53374, 1499, 765, 15, 46, "Input"],
-Cell[54142, 1516, 167, 4, 46, "Input"],
-Cell[54312, 1522, 211, 5, 46, "Input"],
-Cell[54526, 1529, 169, 4, 46, "Input"],
-Cell[54698, 1535, 671, 18, 46, "Input"],
-Cell[55372, 1555, 217, 6, 46, "Input"],
-Cell[55592, 1563, 449, 11, 46, "Input"],
-Cell[56044, 1576, 540, 12, 46, "Input"],
-Cell[56587, 1590, 324, 9, 46, "Input"],
-Cell[56914, 1601, 605, 12, 46, "Input"],
-Cell[57522, 1615, 182, 4, 46, "Input"],
-Cell[57707, 1621, 129, 2, 46, "Input"],
-Cell[57839, 1625, 225, 5, 46, "Input"],
-Cell[58067, 1632, 145, 2, 46, "Input"],
-Cell[58215, 1636, 174, 5, 46, "Input"],
-Cell[58392, 1643, 233, 6, 46, "Input"],
-Cell[58628, 1651, 172, 5, 46, "Input"],
-Cell[58803, 1658, 199, 7, 46, "Input"],
-Cell[59005, 1667, 364, 9, 46, "Input"],
-Cell[59372, 1678, 168, 4, 46, "Input"],
-Cell[59543, 1684, 192, 5, 46, "Input"],
-Cell[59738, 1691, 167, 4, 46, "Input"],
-Cell[59908, 1697, 172, 4, 46, "Input"],
-Cell[60083, 1703, 85, 2, 46, "Input"],
-Cell[60171, 1707, 417, 9, 46, "Input"],
-Cell[60591, 1718, 179, 3, 46, "Input"],
-Cell[60773, 1723, 92, 2, 46, "Input"],
-Cell[60868, 1727, 167, 5, 46, "Input"],
-Cell[61038, 1734, 44, 1, 46, "Input"],
-Cell[61085, 1737, 150, 4, 46, "Input"],
-Cell[61238, 1743, 80, 2, 46, "Input"],
-Cell[61321, 1747, 62, 1, 46, "Input"],
-Cell[61386, 1750, 179, 6, 46, "Input"],
-Cell[61568, 1758, 62, 1, 46, "Input"],
-Cell[61633, 1761, 26, 0, 46, "Input"],
-Cell[61662, 1763, 26, 0, 46, "Input"],
-Cell[61691, 1765, 1695, 50, 107, "Input"],
-Cell[63389, 1817, 62, 1, 46, "Input"],
-Cell[63454, 1820, 165, 5, 46, "Input"],
-Cell[63622, 1827, 366, 12, 46, "Input"],
-Cell[63991, 1841, 240, 6, 46, "Input"],
-Cell[64234, 1849, 309, 5, 46, "Input"],
-Cell[64546, 1856, 438, 10, 46, "Input"],
-Cell[64987, 1868, 894, 25, 46, "Input"],
-Cell[65884, 1895, 390, 6, 46, "Input"],
-Cell[66277, 1903, 81, 1, 46, "Input"],
-Cell[66361, 1906, 139, 2, 46, "Input"],
-Cell[66503, 1910, 4896, 110, 467, "Input"],
-Cell[71402, 2022, 137, 2, 46, "Input"],
-Cell[71542, 2026, 82, 1, 46, "Input"],
-Cell[71627, 2029, 139, 2, 46, "Input"],
-Cell[71769, 2033, 4868, 110, 467, "Input"],
-Cell[76640, 2145, 77, 1, 46, "Input"],
-Cell[76720, 2148, 69, 1, 46, "Input"],
-Cell[76792, 2151, 130, 2, 46, "Input"],
-Cell[76925, 2155, 1357, 23, 46, "Input"],
-Cell[78285, 2180, 318, 5, 46, "Input"],
-Cell[78606, 2187, 134, 2, 46, "Input"],
-Cell[78743, 2191, 884, 20, 107, "Input"],
-Cell[79630, 2213, 269, 4, 46, "Input"],
-Cell[79902, 2219, 408, 10, 46, "Input"],
-Cell[80313, 2231, 414, 11, 46, "Input"],
-Cell[80730, 2244, 124, 3, 46, "Input"],
-Cell[80857, 2249, 864, 25, 46, "Input"],
-Cell[81724, 2276, 762, 22, 46, "Input"],
-Cell[82489, 2300, 737, 24, 46, "Input"],
-Cell[83229, 2326, 2234, 61, 77, "Input"],
-Cell[85466, 2389, 341, 8, 46, "Input"],
-Cell[85810, 2399, 363, 9, 46, "Input"],
-Cell[86176, 2410, 372, 10, 46, "Input"],
-Cell[86551, 2422, 320, 8, 46, "Input"],
-Cell[86874, 2432, 73, 1, 46, "Input"],
-Cell[86950, 2435, 895, 22, 46, "Input"],
-Cell[87848, 2459, 593, 17, 46, "Input"],
-Cell[88444, 2478, 428, 9, 46, "Input"],
-Cell[88875, 2489, 798, 13, 46, "Input"],
-Cell[89676, 2504, 870, 21, 77, "Input"],
-Cell[90549, 2527, 2330, 63, 167, "Input"],
-Cell[92882, 2592, 2747, 52, 167, "Input"],
-Cell[95632, 2646, 577, 16, 46, "Input"],
-Cell[96212, 2664, 590, 16, 46, "Input"],
-Cell[96805, 2682, 28, 0, 46, "Input"],
-Cell[96836, 2684, 1052, 29, 77, "Input"],
-Cell[97891, 2715, 134, 3, 46, "Input"],
-Cell[98028, 2720, 759, 13, 46, "Input"],
-Cell[98790, 2735, 420, 12, 46, "Input"],
-Cell[99213, 2749, 631, 19, 46, "Input"],
-Cell[99847, 2770, 832, 24, 46, "Input"],
-Cell[100682, 2796, 7748, 191, 1097, "Input"],
-Cell[108433, 2989, 170, 3, 46, "Input"],
-Cell[108606, 2994, 1081, 29, 46, "Input"],
-Cell[109690, 3025, 1000, 28, 46, "Input"],
-Cell[110693, 3055, 2839, 74, 467, "Input"],
-Cell[113535, 3131, 1164, 28, 77, "Input"],
-Cell[114702, 3161, 692, 19, 46, "Input"],
-Cell[115397, 3182, 500, 13, 46, "Input"],
-Cell[115900, 3197, 73, 1, 46, "Input"],
-Cell[115976, 3200, 63, 1, 46, "Input"],
-Cell[116042, 3203, 2041, 49, 167, "Input"],
-Cell[118086, 3254, 215, 7, 46, "Input"],
-Cell[118304, 3263, 194, 6, 46, "Input"],
-Cell[118501, 3271, 125, 2, 46, "Input"],
-Cell[118629, 3275, 133, 4, 46, "Input"],
-Cell[118765, 3281, 520, 13, 46, "Input"],
-Cell[119288, 3296, 73, 1, 46, "Input"],
-Cell[119364, 3299, 135, 2, 46, "Input"],
-Cell[119502, 3303, 1554, 41, 167, "Input"],
-Cell[121059, 3346, 2914, 71, 227, "Input"],
-Cell[123976, 3419, 2355, 62, 137, "Input"],
-Cell[126334, 3483, 1648, 43, 197, "Input"],
-Cell[127985, 3528, 129, 3, 46, "Input"],
-Cell[128117, 3533, 971, 26, 46, "Input"],
-Cell[129091, 3561, 105, 3, 46, "Input"],
-Cell[129199, 3566, 108, 3, 46, "Input"],
-Cell[129310, 3571, 50, 1, 46, "Input"],
-Cell[129363, 3574, 51, 1, 46, "Input"],
-Cell[129417, 3577, 28, 0, 46, "Input"],
-Cell[129448, 3579, 304, 7, 46, "Input"],
-Cell[129755, 3588, 26, 0, 46, "Input"],
-Cell[129784, 3590, 138, 2, 46, "Input"],
-Cell[129925, 3594, 1549, 39, 167, "Input"],
-Cell[131477, 3635, 230, 6, 46, "Input"],
-Cell[131710, 3643, 281, 4, 46, "Input"],
-Cell[131994, 3649, 116, 2, 46, "Input"],
-Cell[132113, 3653, 45, 0, 46, "Input"],
-Cell[132161, 3655, 386, 10, 77, "Input"],
-Cell[132550, 3667, 605, 17, 46, "Input"],
-Cell[133158, 3686, 147, 3, 46, "Input"],
-Cell[133308, 3691, 497, 12, 107, "Input"],
-Cell[133808, 3705, 390, 11, 46, "Input"],
-Cell[134201, 3718, 260, 7, 46, "Input"],
-Cell[134464, 3727, 261, 6, 46, "Input"],
-Cell[134728, 3735, 240, 7, 46, "Input"],
-Cell[134971, 3744, 136, 2, 46, "Input"],
-Cell[135110, 3748, 164, 3, 46, "Input"]
+Cell[6414, 185, 381, 12, 46, "Input"],
+Cell[6798, 199, 619, 20, 46, "Input"],
+Cell[7420, 221, 84, 2, 46, "Input"],
+Cell[7507, 225, 385, 12, 46, "Input"],
+Cell[7895, 239, 1018, 33, 46, "Input"],
+Cell[8916, 274, 92, 2, 46, "Input"],
+Cell[9011, 278, 411, 13, 46, "Input"],
+Cell[9425, 293, 614, 19, 46, "Input"],
+Cell[10042, 314, 430, 13, 69, "Input"],
+Cell[10475, 329, 583, 17, 69, "Input"],
+Cell[11061, 348, 896, 24, 115, "Input"],
+Cell[11960, 374, 1121, 26, 69, "Input"],
+Cell[13084, 402, 331, 11, 69, "Input"],
+Cell[13418, 415, 1651, 40, 69, "Input"],
+Cell[15072, 457, 336, 9, 69, "Input"],
+Cell[15411, 468, 745, 20, 160, "Input"],
+Cell[16159, 490, 504, 10, 69, "Input"],
+Cell[16666, 502, 651, 17, 69, "Input"],
+Cell[17320, 521, 736, 16, 69, "Input"],
+Cell[18059, 539, 279, 8, 69, "Input"],
+Cell[18341, 549, 610, 14, 121, "Input"],
+Cell[18954, 565, 1095, 28, 91, "Input"],
+Cell[20052, 595, 135, 2, 69, "Input"],
+Cell[20190, 599, 280, 7, 69, "Input"],
+Cell[20473, 608, 2789, 66, 565, "Input"],
+Cell[23265, 676, 81, 1, 69, "Input"],
+Cell[23349, 679, 64, 1, 69, "Input"],
+Cell[23416, 682, 106, 1, 69, "Input"],
+Cell[23525, 685, 140, 3, 69, "Input"],
+Cell[23668, 690, 1119, 28, 160, "Input"],
+Cell[24790, 720, 845, 24, 160, "Input"],
+Cell[25638, 746, 975, 28, 160, "Input"],
+Cell[26616, 776, 929, 27, 160, "Input"],
+Cell[27548, 805, 923, 27, 160, "Input"],
+Cell[28474, 834, 931, 27, 160, "Input"],
+Cell[29408, 863, 1894, 45, 205, "Input"],
+Cell[31305, 910, 1121, 30, 205, "Input"],
+Cell[32429, 942, 926, 26, 160, "Input"],
+Cell[33358, 970, 958, 24, 160, "Input"],
+Cell[34319, 996, 925, 22, 160, "Input"],
+Cell[35247, 1020, 659, 16, 115, "Input"],
+Cell[35909, 1038, 151, 4, 69, "Input"],
+Cell[36063, 1044, 355, 11, 69, "Input"],
+Cell[36421, 1057, 176, 3, 69, "Input"],
+Cell[36600, 1062, 1496, 41, 160, "Input"],
+Cell[38099, 1105, 7597, 171, 1195, "Input"],
+Cell[45699, 1278, 294, 6, 69, "Input"],
+Cell[45996, 1286, 1819, 48, 115, "Input"],
+Cell[47818, 1336, 194, 6, 69, "Input"],
+Cell[48015, 1344, 761, 22, 69, "Input"],
+Cell[48779, 1368, 163, 5, 69, "Input"],
+Cell[48945, 1375, 227, 6, 69, "Input"],
+Cell[49175, 1383, 1327, 28, 69, "Input"],
+Cell[50505, 1413, 990, 28, 295, "Input"],
+Cell[51498, 1443, 765, 15, 69, "Input"],
+Cell[52266, 1460, 167, 4, 69, "Input"],
+Cell[52436, 1466, 211, 5, 69, "Input"],
+Cell[52650, 1473, 169, 4, 69, "Input"],
+Cell[52822, 1479, 671, 18, 69, "Input"],
+Cell[53496, 1499, 217, 6, 69, "Input"],
+Cell[53716, 1507, 449, 11, 69, "Input"],
+Cell[54168, 1520, 540, 12, 69, "Input"],
+Cell[54711, 1534, 324, 9, 69, "Input"],
+Cell[55038, 1545, 605, 12, 69, "Input"],
+Cell[55646, 1559, 182, 4, 69, "Input"],
+Cell[55831, 1565, 129, 2, 69, "Input"],
+Cell[55963, 1569, 225, 5, 69, "Input"],
+Cell[56191, 1576, 145, 2, 69, "Input"],
+Cell[56339, 1580, 174, 5, 69, "Input"],
+Cell[56516, 1587, 233, 6, 69, "Input"],
+Cell[56752, 1595, 172, 5, 69, "Input"],
+Cell[56927, 1602, 199, 7, 69, "Input"],
+Cell[57129, 1611, 364, 9, 69, "Input"],
+Cell[57496, 1622, 168, 4, 69, "Input"],
+Cell[57667, 1628, 192, 5, 69, "Input"],
+Cell[57862, 1635, 167, 4, 69, "Input"],
+Cell[58032, 1641, 172, 4, 69, "Input"],
+Cell[58207, 1647, 85, 2, 69, "Input"],
+Cell[58295, 1651, 417, 9, 69, "Input"],
+Cell[58715, 1662, 179, 3, 69, "Input"],
+Cell[58897, 1667, 92, 2, 69, "Input"],
+Cell[58992, 1671, 167, 5, 69, "Input"],
+Cell[59162, 1678, 44, 1, 69, "Input"],
+Cell[59209, 1681, 150, 4, 69, "Input"],
+Cell[59362, 1687, 80, 2, 69, "Input"],
+Cell[59445, 1691, 62, 1, 69, "Input"],
+Cell[59510, 1694, 179, 6, 69, "Input"],
+Cell[59692, 1702, 62, 1, 69, "Input"],
+Cell[59757, 1705, 26, 0, 69, "Input"],
+Cell[59786, 1707, 26, 0, 69, "Input"],
+Cell[59815, 1709, 1695, 50, 160, "Input"],
+Cell[61513, 1761, 62, 1, 69, "Input"],
+Cell[61578, 1764, 165, 5, 69, "Input"],
+Cell[61746, 1771, 366, 12, 69, "Input"],
+Cell[62115, 1785, 240, 6, 69, "Input"],
+Cell[62358, 1793, 309, 5, 69, "Input"],
+Cell[62670, 1800, 438, 10, 69, "Input"],
+Cell[63111, 1812, 894, 25, 69, "Input"],
+Cell[64008, 1839, 390, 6, 69, "Input"],
+Cell[64401, 1847, 81, 1, 69, "Input"],
+Cell[64485, 1850, 139, 2, 69, "Input"],
+Cell[64627, 1854, 4896, 110, 700, "Input"],
+Cell[69526, 1966, 137, 2, 69, "Input"],
+Cell[69666, 1970, 82, 1, 69, "Input"],
+Cell[69751, 1973, 139, 2, 69, "Input"],
+Cell[69893, 1977, 4868, 110, 700, "Input"],
+Cell[74764, 2089, 77, 1, 69, "Input"],
+Cell[74844, 2092, 69, 1, 69, "Input"],
+Cell[74916, 2095, 130, 2, 69, "Input"],
+Cell[75049, 2099, 1357, 23, 69, "Input"],
+Cell[76409, 2124, 318, 5, 69, "Input"],
+Cell[76730, 2131, 134, 2, 69, "Input"],
+Cell[76867, 2135, 884, 20, 160, "Input"],
+Cell[77754, 2157, 269, 4, 69, "Input"],
+Cell[78026, 2163, 408, 10, 69, "Input"],
+Cell[78437, 2175, 414, 11, 69, "Input"],
+Cell[78854, 2188, 124, 3, 69, "Input"],
+Cell[78981, 2193, 864, 25, 69, "Input"],
+Cell[79848, 2220, 762, 22, 69, "Input"],
+Cell[80613, 2244, 737, 24, 69, "Input"],
+Cell[81353, 2270, 2234, 61, 115, "Input"],
+Cell[83590, 2333, 341, 8, 69, "Input"],
+Cell[83934, 2343, 363, 9, 69, "Input"],
+Cell[84300, 2354, 372, 10, 69, "Input"],
+Cell[84675, 2366, 320, 8, 69, "Input"],
+Cell[84998, 2376, 73, 1, 69, "Input"],
+Cell[85074, 2379, 895, 22, 69, "Input"],
+Cell[85972, 2403, 593, 17, 69, "Input"],
+Cell[86568, 2422, 428, 9, 69, "Input"],
+Cell[86999, 2433, 798, 13, 69, "Input"],
+Cell[87800, 2448, 870, 21, 115, "Input"],
+Cell[88673, 2471, 2330, 63, 250, "Input"],
+Cell[91006, 2536, 2747, 52, 250, "Input"],
+Cell[93756, 2590, 577, 16, 69, "Input"],
+Cell[94336, 2608, 590, 16, 69, "Input"],
+Cell[94929, 2626, 28, 0, 69, "Input"],
+Cell[94960, 2628, 1052, 29, 115, "Input"],
+Cell[96015, 2659, 134, 3, 69, "Input"],
+Cell[96152, 2664, 759, 13, 69, "Input"],
+Cell[96914, 2679, 420, 12, 69, "Input"],
+Cell[97337, 2693, 631, 19, 69, "Input"],
+Cell[97971, 2714, 832, 24, 69, "Input"],
+Cell[98806, 2740, 7748, 191, 1645, "Input"],
+Cell[106557, 2933, 170, 3, 69, "Input"],
+Cell[106730, 2938, 1081, 29, 69, "Input"],
+Cell[107814, 2969, 1000, 28, 69, "Input"],
+Cell[108817, 2999, 2839, 74, 700, "Input"],
+Cell[111659, 3075, 1164, 28, 115, "Input"],
+Cell[112826, 3105, 692, 19, 69, "Input"],
+Cell[113521, 3126, 500, 13, 69, "Input"],
+Cell[114024, 3141, 73, 1, 69, "Input"],
+Cell[114100, 3144, 63, 1, 69, "Input"],
+Cell[114166, 3147, 2041, 49, 250, "Input"],
+Cell[116210, 3198, 215, 7, 69, "Input"],
+Cell[116428, 3207, 194, 6, 69, "Input"],
+Cell[116625, 3215, 125, 2, 69, "Input"],
+Cell[116753, 3219, 133, 4, 69, "Input"],
+Cell[116889, 3225, 520, 13, 69, "Input"],
+Cell[117412, 3240, 73, 1, 69, "Input"],
+Cell[117488, 3243, 135, 2, 69, "Input"],
+Cell[117626, 3247, 1554, 41, 250, "Input"],
+Cell[119183, 3290, 2914, 71, 340, "Input"],
+Cell[122100, 3363, 2355, 62, 205, "Input"],
+Cell[124458, 3427, 1648, 43, 295, "Input"],
+Cell[126109, 3472, 129, 3, 69, "Input"],
+Cell[126241, 3477, 971, 26, 69, "Input"],
+Cell[127215, 3505, 105, 3, 69, "Input"],
+Cell[127323, 3510, 108, 3, 69, "Input"],
+Cell[127434, 3515, 50, 1, 69, "Input"],
+Cell[127487, 3518, 51, 1, 69, "Input"],
+Cell[127541, 3521, 28, 0, 69, "Input"],
+Cell[127572, 3523, 304, 7, 69, "Input"],
+Cell[127879, 3532, 26, 0, 69, "Input"],
+Cell[127908, 3534, 138, 2, 69, "Input"],
+Cell[128049, 3538, 1549, 39, 250, "Input"],
+Cell[129601, 3579, 230, 6, 69, "Input"],
+Cell[129834, 3587, 281, 4, 69, "Input"],
+Cell[130118, 3593, 116, 2, 69, "Input"],
+Cell[130237, 3597, 45, 0, 69, "Input"],
+Cell[130285, 3599, 386, 10, 115, "Input"],
+Cell[130674, 3611, 605, 17, 69, "Input"],
+Cell[131282, 3630, 147, 3, 69, "Input"],
+Cell[131432, 3635, 497, 12, 160, "Input"],
+Cell[131932, 3649, 77, 1, 69, "Input"],
+Cell[132012, 3652, 390, 11, 69, "Input"],
+Cell[132405, 3665, 260, 7, 69, "Input"],
+Cell[132668, 3674, 261, 6, 69, "Input"],
+Cell[132932, 3682, 240, 7, 69, "Input"],
+Cell[133175, 3691, 136, 2, 69, "Input"],
+Cell[133314, 3695, 164, 3, 69, "Input"]
 }
 ]
 *)
